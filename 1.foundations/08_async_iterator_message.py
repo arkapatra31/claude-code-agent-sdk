@@ -60,7 +60,7 @@ async def pattern_early_break() -> None:
         if isinstance(msg, AssistantMessage):
             for b in msg.content:
                 if isinstance(b, TextBlock):
-                    print("first text block:", b.text.strip()[:80])
+                    print("first text block:", b.text.strip()[:2])
                     return  # stop iterating; subsequent messages are dropped
 
 
