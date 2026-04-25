@@ -118,7 +118,7 @@ async def main() -> None:
                     if isinstance(b, TextBlock):
                         print(b.text.strip())
             elif isinstance(msg, ResultMessage):
-                print(f"\n[done turns={msg.num_turns}]")
+                print(f"\n[done turns={msg.num_turns}] [cost={msg.total_cost_usd:.4f}]")
 
 
 if __name__ == "__main__":

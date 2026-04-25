@@ -1,0 +1,5 @@
+{
+  "name": "release-tools",
+  "version": "0.1.0",
+  "description": "Helpers for cutting releases \u2014 changelog, version bumps."
+}
