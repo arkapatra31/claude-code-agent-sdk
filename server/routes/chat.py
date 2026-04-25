@@ -12,7 +12,7 @@ from claude_agent_sdk import (
     ToolUseBlock,
 )
 
-from adk_client.claude import ClaudeCodeAgentClient
+from adk_client.claude_code_client import ClaudeCodeAgentClient
 from utils.tracing import trace_agent_stream
 
 logger = logging.getLogger(__name__)
