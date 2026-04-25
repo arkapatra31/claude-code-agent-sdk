@@ -21,6 +21,8 @@ Content blocks (inside AssistantMessage / UserMessage):
 Run: uv run python sdk-patterns/05_message_types.py
 """
 
+import os
+from dotenv import load_dotenv
 import anyio
 from claude_agent_sdk import (
     AssistantMessage,
@@ -36,6 +38,7 @@ from claude_agent_sdk import (
     UserMessage,
 )
 
+load_dotenv()
 
 def describe_block(b) -> str:
     if isinstance(b, TextBlock):
@@ -52,6 +55,7 @@ def describe_block(b) -> str:
 async def main() -> None:
     options = ClaudeAgentOptions(
         system_prompt="Be brief.",
+        # model=os.getenv("ANTHROPIC_MODEL"),
         allowed_tools=["Read"],
         permission_mode="acceptEdits",
         include_partial_messages=False,

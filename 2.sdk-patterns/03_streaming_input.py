@@ -29,7 +29,7 @@ from claude_agent_sdk import (
 async def user_inputs():
     """Async producer of user turns — could be a websocket, queue, etc."""
     prompts = [
-        "Hi, my name is Ark.",
+        "Hi, my name is Arka.",
         "What is 7 * 6?",
         "Repeat my name back to me.",
     ]

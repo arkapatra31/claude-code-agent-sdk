@@ -45,7 +45,12 @@ from claude_agent_sdk import (
 async def main() -> None:
     options = ClaudeAgentOptions(
         system_prompt="Reason carefully, then answer concisely.",
-        thinking=ThinkingConfigEnabled(budget_tokens=4000),
+        thinking=ThinkingConfigEnabled(
+            type="enabled",
+            budget_tokens=4000,
+            display="summarized",
+        ),
+        effort="medium",
         # `effort="high"` would also work and is simpler:
         # effort="high",
     )

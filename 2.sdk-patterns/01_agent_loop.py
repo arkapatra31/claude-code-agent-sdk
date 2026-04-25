@@ -18,6 +18,7 @@ Run: uv run python sdk-patterns/01_agent_loop.py
 """
 
 import anyio
+from pathlib import Path
 from claude_agent_sdk import (
     AssistantMessage,
     ClaudeAgentOptions,
@@ -35,11 +36,11 @@ async def main() -> None:
         system_prompt="You are a precise coding assistant.",
         allowed_tools=["Read", "Glob"],
         permission_mode="acceptEdits",
-        cwd=".",
+        cwd=str(Path(__file__).resolve().parent),
     )
 
     async with ClaudeSDKClient(options=options) as client:
-        await client.query("List the python files in sdk-patterns/ and tell me how many there are.")
+        await client.query("List the python files in the current directory and tell me how many there are.")
 
         turn = 0
         async for msg in client.receive_response():

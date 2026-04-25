@@ -38,7 +38,7 @@ from claude_agent_sdk import (
     TextBlock,
 )
 
-WORKSPACE = os.path.abspath("./_sandbox")
+WORKSPACE = os.path.abspath(".")
 COMMANDS_DIR = os.path.join(WORKSPACE, ".claude", "commands")
 
 SUMMARIZE_CMD = """\
@@ -68,9 +68,7 @@ async def main() -> None:
     async with ClaudeSDKClient(options=options) as client:
         # Trigger the slash command exactly as a user would.
         await client.query(
-            "/summarize The Claude Agent SDK lets you embed Claude as an "
-            "autonomous agent inside Python apps with tool use, hooks, "
-            "permissions, and multi-turn sessions."
+            "/summarize 4.advanced_patterns/05_slash_commands.py"
         )
         async for msg in client.receive_response():
             if isinstance(msg, AssistantMessage):

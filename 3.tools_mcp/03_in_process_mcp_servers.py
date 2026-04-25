@@ -64,7 +64,7 @@ async def main() -> None:
                     if isinstance(b, TextBlock):
                         print("text:", b.text.strip())
                     elif isinstance(b, ToolUseBlock):
-                        print(f"tool_use: {b.name}({b.input})")
+                        print(f"tool_use: {b.id} {b.name} ({b.input})")
             elif isinstance(msg, ResultMessage):
                 print(f"[done turns={msg.num_turns}]")
 
