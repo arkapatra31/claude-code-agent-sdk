@@ -73,8 +73,10 @@ async def main() -> None:
         if isinstance(msg, AssistantMessage):
             for b in msg.content:
                 if isinstance(b, TextBlock):
+                    print("TextBlock:", end=" ")
                     print(b.text.strip())
         elif isinstance(msg, ResultMessage):
+            print("Result:", msg.result)
             print(f"[turns={msg.num_turns}]")
 
 
