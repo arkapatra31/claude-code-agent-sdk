@@ -1,13 +1,11 @@
 [project]
 name = "claude-code-agent-sdk"
 version = "0.1.0"
-description = "Add your description here"
+description = "Learning examples for the Claude Agent SDK: foundations, core patterns, and tools/MCP."
 readme = "README.md"
 requires-python = ">=3.13"
 dependencies = [
     "claude-agent-sdk>=0.1.68",
-    "streamlit>=1.40.0",
-    "fastapi>=0.115.0",
-    "uvicorn[standard]>=0.32.0",
     "python-dotenv>=1.0.1",
+    "anyio>=4.0.0",
 ]
